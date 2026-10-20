@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Equity Signal Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <style>
+        .journal-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem; }
+        .journal-stat { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 1rem; text-align: center; }
+        .journal-stat .num { font-size: 1.4rem; font-weight: 800; }
+        .journal-stat .lbl { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.25rem; }
+        .journal-form { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.25rem; margin-bottom: 1.5rem; }
+        .journal-form .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.75rem; margin-bottom: 0.75rem; }
+        .journal-form label { display: block; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 0.25rem; }
+        .journal-form input, .journal-form select { width: 100%; padding: 0.5rem 0.6rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-primary); font-size: 0.85rem; outline: none; }
+        .journal-form input:focus, .journal-form select:focus { border-color: var(--accent-blue); }
+        .journal-form .form-actions { display: flex; gap: 0.75rem; justify-content: flex-end; }
+        .stocks-table-wrap { overflow-x: auto; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+        th, td { padding: 0.6rem 0.85rem; text-align: left; border-bottom: 1px solid var(--border-color); white-space: nowrap; }
+        th { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(59,130,246,0.05); }
+        .btn-sm { padding: 0.35rem 0.75rem; font-size: 0.72rem; }
+        .btn-danger { background: #dc2626; border-color: #dc2626; color: #fff; }
+        .btn-danger:hover { background: #b91c1c; }
+        .note-bar { font-size: 0.72rem; color: var(--text-muted); background: var(--bg-card); border: 1px dashed var(--border-color); border-radius: 8px; padding: 0.6rem 0.9rem; margin-bottom: 1.25rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand"><div class="logo">&#x2B21;</div><span>Equity Signal Engine</span></a>
+        <div style="display:flex;align-items:center;gap:1.5rem;">
+            <div class="nav-links">
+                <a href="/" class="nav-link">Dashboard</a>
+                <a href="/chart" class="nav-link">Chart</a>
+                <a href="/news" class="nav-link">News</a>
+                <a href="/journal" class="nav-link">Journal</a>
+                <a href="/stocks" class="nav-link">Stocks</a>
+                <a href="/portfolio" class="nav-link active">Portfolio</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Tools &#x25BE;</a>
+                    <div class="dropdown-menu">
+                        <a href="/sectors" class="dropdown-item">Sector Rotation</a>
+                        <a href="/flows" class="dropdown-item">FII/DII Flows</a>
+                        <a href="/breadth" class="dropdown-item">Market Breadth</a>
+                        <a href="/seasonal" class="dropdown-item">Seasonal Calendar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="market-status"><span class="status-dot closed"></span><span>Market Closed</span></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Portfolio Management</h1>
+            <p>Track your open holdings with live mark-to-market P&amp;L. Positions are saved on the backend and refresh automatically.</p>
+        </div>
+
+        <div class="journal-summary" id="portfolio-summary"></div>
+
+        <div class="note-bar">Quick-add: on the Dashboard, click <b>+ Add</b> on any live signal card to add it here automatically.</div>
+
+        <div class="journal-form">
+            <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.75rem;">&#x2795; Add Holding</h3>
+            <form id="portfolio-form">
+                <div class="row">
+                    <div><label>Ticker</label><input type="text" id="pf-ticker" placeholder="e.g. RELIANCE" maxlength="15" style="text-transform:uppercase;"></div>
+                    <div><label>Quantity</label><input type="number" id="pf-qty" min="0.01" step="0.01" placeholder="10"></div>
+                    <div><label>Avg Price (&#x20B9;)</label><input type="number" id="pf-price" step="0.05" min="0.01" placeholder="2400"></div>
+                    <div><label>Stop Loss (&#x20B9;) (optional)</label><input type="number" id="pf-stop" step="0.05" min="0.01" placeholder="2280"></div>
+                </div>
+                <div class="row">
+                    <div><label>Buy Date</label><input type="date" id="pf-date"></div>
+                    <div><label>Segment / Horizon</label>
+                        <select id="pf-segment">
+                            <option value="LONG-TERM">LONG-TERM</option>
+                            <option value="SWING">SWING</option>
+                            <option value="INTRADAY">INTRADAY</option>
+                            <option value="MISC">MISC</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">&#x2795; Add Holding</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="stocks-table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Holding</th>
+                        <th>Qty</th>
+                        <th>Avg Price</th>
+                        <th>LTP</th>
+                        <th>Invested</th>
+                        <th>Current Value</th>
+                        <th>P&amp;L (&#x20B9; / %)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="portfolio-tbody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="static/js/app.js"></script>
+</body>
+</html>

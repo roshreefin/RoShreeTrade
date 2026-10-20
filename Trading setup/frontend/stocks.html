@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks — Equity Signal Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <style>
+        .stocks-toolbar { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; margin-bottom: 1rem; }
+        .stocks-toolbar input[type="text"] { flex: 1; min-width: 180px; padding: 0.6rem 0.9rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-primary); font-size: 0.85rem; outline: none; }
+        .stocks-toolbar select { padding: 0.6rem 0.75rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-primary); font-size: 0.85rem; outline: none; }
+        .universe-tabs { display: flex; gap: 0.5rem; margin-bottom: 0.5rem; }
+        .universe-tab { padding: 0.45rem 1rem; border-radius: 8px; cursor: pointer; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-secondary); font-size: 0.8rem; font-weight: 600; }
+        .universe-tab.active { background: rgba(59,130,246,0.15); border-color: #3b82f6; color: #3b82f6; }
+        .stocks-table-wrap { overflow-x: auto; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+        th, td { padding: 0.6rem 0.85rem; text-align: left; border-bottom: 1px solid var(--border-color); white-space: nowrap; }
+        th { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); cursor: pointer; user-select: none; }
+        th:hover { color: #3b82f6; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(59,130,246,0.05); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand"><div class="logo">&#x2B21;</div><span>Equity Signal Engine</span></a>
+        <div style="display:flex;align-items:center;gap:1.5rem;">
+            <div class="nav-links">
+                <a href="/" class="nav-link">Dashboard</a>
+                <a href="/chart" class="nav-link">Chart</a>
+                <a href="/news" class="nav-link">News</a>
+                <a href="/journal" class="nav-link">Journal</a>
+                <a href="/stocks" class="nav-link active">Stocks</a>
+                <a href="/portfolio" class="nav-link">Portfolio</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Tools &#x25BE;</a>
+                    <div class="dropdown-menu">
+                        <a href="/sectors" class="dropdown-item">Sector Rotation</a>
+                        <a href="/flows" class="dropdown-item">FII/DII Flows</a>
+                        <a href="/breadth" class="dropdown-item">Market Breadth</a>
+                        <a href="/seasonal" class="dropdown-item">Seasonal Calendar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="market-status"><span class="status-dot closed"></span><span>Market Closed</span></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Stock Screener</h1>
+            <p>Live prices &amp; day change for the Nifty 50 / 200 / 500 universe. Click any row to open its technical chart.</p>
+        </div>
+
+        <div class="universe-tabs">
+            <button class="universe-tab" data-universe="50">Nifty 50</button>
+            <button class="universe-tab" data-universe="200">Nifty 200</button>
+            <button class="universe-tab active" data-universe="500">Nifty 500</button>
+        </div>
+
+        <div class="stocks-toolbar">
+            <input type="text" id="stock-search" placeholder="Search by ticker or company name...">
+            <select id="stock-signal-filter">
+                <option value="any">All signals</option>
+                <option value="yes">Has live signal</option>
+                <option value="no">No signal</option>
+            </select>
+            <span style="font-size:0.75rem;color:var(--text-muted);">Showing <b id="stocks-count">0</b> stocks</span>
+        </div>
+
+        <div class="stocks-table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th onclick="stockSortBy('ticker')">Ticker</th>
+                        <th onclick="stockSortBy('last')">Last Price</th>
+                        <th onclick="stockSortBy('change_pct')">Day %</th>
+                        <th onclick="stockSortBy('volume')">Volume</th>
+                        <th>Signal</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="stocks-tbody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="static/js/app.js"></script>
+</body>
+</html>

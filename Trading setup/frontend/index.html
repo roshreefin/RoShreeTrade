@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equity Signal Engine — Indian Stock Market</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">
+            <div class="logo">&#x2B21;</div>
+            <span>Equity Signal Engine</span>
+        </a>
+        <div style="display:flex;align-items:center;gap:1.5rem;">
+            <div class="nav-links">
+                <a href="/" class="nav-link active">Dashboard</a>
+                <a href="/chart" class="nav-link">Chart</a>
+                <a href="/news" class="nav-link">News</a>
+                <a href="/journal" class="nav-link">Journal</a>
+                <a href="/stocks" class="nav-link">Stocks</a>
+                <a href="/portfolio" class="nav-link">Portfolio</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Tools &#x25BE;</a>
+                    <div class="dropdown-menu">
+                        <a href="/sectors" class="dropdown-item">Sector Rotation</a>
+                        <a href="/flows" class="dropdown-item">FII/DII Flows</a>
+                        <a href="/breadth" class="dropdown-item">Market Breadth</a>
+                        <a href="/seasonal" class="dropdown-item">Seasonal Calendar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="market-status">
+                <span class="status-dot closed"></span>
+                <span>Market Closed</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Market Overview -->
+        <div class="overview-grid">
+            <div class="overview-card">
+                <div class="overview-label">Nifty 50</div>
+                <div class="overview-value" id="nifty-value">—</div>
+            </div>
+            <div class="overview-card">
+                <div class="overview-label">Nifty Change</div>
+                <div class="overview-value" id="nifty-change">—</div>
+            </div>
+            <div class="overview-card">
+                <div class="overview-label">Bank Nifty</div>
+                <div class="overview-value" id="banknifty-value">—</div>
+            </div>
+            <div class="overview-card">
+                <div class="overview-label">Status</div>
+                <div class="overview-value" id="last-updated" style="font-size:0.9rem;">—</div>
+            </div>
+        </div>
+
+        <!-- Signals -->
+        <div class="controls">
+            <div style="display:flex;align-items:center;gap:1rem;">
+                <h2 style="font-size:1.25rem;font-weight:700;">Live Signals</h2>
+                <span style="font-size:0.8rem;color:var(--text-muted);" id="signal-count">0</span>
+                <span style="font-size:0.75rem;color:var(--text-muted);" id="last-scan"></span>
+            </div>
+            <div style="display:flex;gap:0.75rem;align-items:center;">
+                <div class="tabs">
+                    <button class="tab active" data-segment="">All</button>
+                    <button class="tab" data-segment="INTRADAY">Intraday</button>
+                    <button class="tab" data-segment="SWING">Swing</button>
+                    <button class="tab" data-segment="LONG-TERM">Long-Term</button>
+                </div>
+                <button class="btn btn-primary" onclick="loadSignals()">&#x27F3; Scan</button>
+            </div>
+        </div>
+
+        <div id="signals-container" class="signals-grid">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Initializing scanner...</p>
+            </div>
+        </div>
+
+        <!-- Position Size Calculator -->
+        <div class="calculator-section">
+            <h2 class="section-title" style="margin-bottom:1rem;">&#x1F9EE; Position Size Calculator</h2>
+            <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:1rem;">
+                Based on 1% risk-per-trade model: Shares = (Capital &times; Risk%) &divide; (Entry &minus; Stop Loss)
+            </p>
+            <div class="calc-grid">
+                <div class="calc-input">
+                    <label>Entry Price (&#x20B9;)</label>
+                    <input type="number" id="entry-price" value="1000" step="0.05" min="1">
+                </div>
+                <div class="calc-input">
+                    <label>Stop Loss (&#x20B9;)</label>
+                    <input type="number" id="stop-loss" value="950" step="0.05" min="1">
+                </div>
+                <div class="calc-input">
+                    <label>Total Capital (&#x20B9;)</label>
+                    <input type="number" id="total-capital" value="1000000" step="1000" min="1000">
+                </div>
+                <div class="calc-input">
+                    <label>Risk %</label>
+                    <input type="number" id="risk-pct" value="1" step="0.1" min="0.1" max="5">
+                </div>
+            </div>
+            <div class="calc-result">
+                <div class="label">Recommended Shares</div>
+                <div class="shares" id="calc-shares">—</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/app.js"></script>
+</body>
+</html>
