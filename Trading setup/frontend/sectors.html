@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sector Rotation — Equity Signal Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <style>
+        .sector-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem; }
+        .sector-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 1rem; transition: all 0.15s; }
+        .sector-card:hover { border-color: var(--text-muted); }
+        .sector-name { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem; }
+        .sector-change { font-size: 1.25rem; font-weight: 800; }
+        .sector-top { font-size: 0.7rem; color: var(--text-muted); margin-top: 0.25rem; }
+        .sector-rank { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; padding: 1rem; background: var(--bg-card); border-radius: 10px; border: 1px solid var(--border-color); }
+        .sector-rank .badge { font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 20px; }
+        .badge-bullish { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .badge-bearish { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .badge-neutral { background: rgba(148,163,184,0.15); color: #94a3b8; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand"><div class="logo">&#x2B21;</div><span>Equity Signal Engine</span></a>
+        <div style="display:flex;align-items:center;gap:1.5rem;">
+            <div class="nav-links">
+                <a href="/" class="nav-link">Dashboard</a>
+                <a href="/chart" class="nav-link">Chart</a>
+                <a href="/news" class="nav-link">News</a>
+                <a href="/journal" class="nav-link">Journal</a>
+                <a href="/stocks" class="nav-link">Stocks</a>
+                <a href="/portfolio" class="nav-link">Portfolio</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active">Tools &#x25BE;</a>
+                    <div class="dropdown-menu">
+                        <a href="/sectors" class="dropdown-item">Sector Rotation</a>
+                        <a href="/flows" class="dropdown-item">FII/DII Flows</a>
+                        <a href="/breadth" class="dropdown-item">Market Breadth</a>
+                        <a href="/seasonal" class="dropdown-item">Seasonal Calendar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="market-status"><span class="status-dot closed"></span><span>Market Closed</span></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header"><h1>Sector Rotation</h1><p>Rotate capital into leading sectors. Green = bullish momentum to buy dips. Red = bearish, avoid or consider shorting.</p></div>
+
+        <div id="sector-rank-container"></div>
+        <div class="sector-grid" id="sector-grid"><div class="loading"><div class="spinner"></div><p>Loading sector data...</p></div></div>
+        <div style="font-size:0.75rem;color:var(--text-muted);" id="sector-timestamp"></div>
+    </div>
+
+    <script src="static/js/app.js"></script>
+</body>
+</html>

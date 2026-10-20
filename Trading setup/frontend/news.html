@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market News — Equity Signal Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <style>
+        .news-item.bookmarked { border-color: #eab308 !important; }
+        .news-bookmark-btn:hover { opacity: 0.8; transform: scale(1.1); }
+        .bookmark-bar { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .bookmark-bar .label { font-size: 0.8rem; color: var(--text-muted); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">
+            <div class="logo">&#x2B21;</div>
+            <span>Equity Signal Engine</span>
+        </a>
+        <div style="display:flex;align-items:center;gap:1.5rem;">
+            <div class="nav-links">
+                <a href="/" class="nav-link">Dashboard</a>
+                <a href="/chart" class="nav-link">Chart</a>
+                <a href="/news" class="nav-link active">News</a>
+                <a href="/journal" class="nav-link">Journal</a>
+                <a href="/stocks" class="nav-link">Stocks</a>
+                <a href="/portfolio" class="nav-link">Portfolio</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Tools &#x25BE;</a>
+                    <div class="dropdown-menu">
+                        <a href="/sectors" class="dropdown-item">Sector Rotation</a>
+                        <a href="/flows" class="dropdown-item">FII/DII Flows</a>
+                        <a href="/breadth" class="dropdown-item">Market Breadth</a>
+                        <a href="/seasonal" class="dropdown-item">Seasonal Calendar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="market-status">
+                <span class="status-dot closed"></span>
+                <span>Market Closed</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Market News & Impact Analysis</h1>
+            <p>Curated news from the last 7 days. Each item includes affected stocks, sector impact, predictions, cautions & actionable do's/don'ts. Click the &#x2606; star to bookmark, then filter by bookmarks.</p>
+        </div>
+
+        <div class="bookmark-bar">
+            <span class="label">Showing <strong id="news-count">0</strong> news items</span>
+            <button id="bookmark-filter-btn" class="btn">&#x2606; Show Bookmarks Only</button>
+        </div>
+
+        <div id="news-container" class="news-list">
+            <div class="loading"><div class="spinner"></div><p>Loading news...</p></div>
+        </div>
+    </div>
+
+    <script src="static/js/app.js"></script>
+</body>
+</html>

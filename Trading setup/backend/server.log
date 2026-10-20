@@ -1,0 +1,233 @@
+INFO:     Started server process [6864]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[yfinance] Live data enabled — no API key needed.
+Signal scanner started. Scanning every 15 minutes during market hours.
+INFO:     127.0.0.1:64500 - "GET /api/chart-analysis?ticker=AUBANK HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64500 - "GET /api/fundamental?ticker=AUBANK HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64500 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64529 - "GET /api/chart-analysis?ticker=NESTLEIND HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64529 - "GET /api/fundamental?ticker=NESTLEIND HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64529 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64533 - "GET /stocks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64533 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:64535 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64584 - "GET /api/fundamental?ticker=HDFCBANK HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64578 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64586 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64589 - "GET /api/stocks?universe=200&sort_by=change_pct&order=desc&signal=any HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64593 - "GET /chart?ticker=INDIGO HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64593 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:64593 - "GET /api/chart-analysis?ticker=INDIGO HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64594 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64596 - "GET /api/signals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64593 - "GET /api/fundamental?ticker=INDIGO HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\encoders.py", line 345, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'complex' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\encoders.py", line 350, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1162, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 1650, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 2102, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 1670, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 1218, in handle
+    await app(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 143, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 129, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 704, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 326, in serialize_response
+    return jsonable_encoder(response_content)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\encoders.py", line 306, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\encoders.py", line 306, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\encoders.py", line 306, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\encoders.py", line 353, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'complex' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:64608 - "GET /api/fundamental?ticker=SWISSMLTRY HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64618 - "GET /api/fundamental?ticker=BHARATFORG HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64620 - "GET /api/fundamental?ticker=HDFCBANK HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64621 - "GET /api/fundamental?ticker=NESTLEIND HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64622 - "GET /api/fundamental?ticker=OLAELEC HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64624 - "GET /api/fundamental?ticker=TITAN HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64626 - "GET /api/fundamental?ticker=TCS HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64629 - "GET /api/fundamental?ticker=NONEXIST12345 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64633 - "GET /api/fundamental?ticker=SWISSMLTRY HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64636 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64638 - "GET /api/chart-analysis?ticker=INDIGO HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64638 - "GET /api/fundamental?ticker=INDIGO HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\encoders.py", line 345, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'complex' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\encoders.py", line 350, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\applications.py", line 1162, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 1650, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 2102, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 1670, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 1218, in handle
+    await app(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 143, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 129, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 704, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\routing.py", line 326, in serialize_response
+    return jsonable_encoder(response_content)
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\encoders.py", line 306, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\encoders.py", line 306, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\encoders.py", line 306, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "C:\Users\Ro_Hit_\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\encoders.py", line 353, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'complex' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:64645 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64645 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64656 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64656 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64663 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64656 - "GET /static/css/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64663 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64663 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64682 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64684 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64684 - "GET /api/chart-analysis?ticker=HAL HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64684 - "GET /api/fundamental?ticker=HAL HTTP/1.1" 200 OK

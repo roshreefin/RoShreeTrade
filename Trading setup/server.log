@@ -1,0 +1,474 @@
+INFO:     Started server process [7528]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+^CINFO:     Started server process [4400]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[yfinance] Live data enabled — no API key needed.
+Signal scanner started. Scanning every 15 minutes during market hours.
+INFO:     127.0.0.1:55651 - "GET /api/health HTTP/1.1" 200 OK
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TATAMOTORS.NS"}}}
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PEL.NS"}}}
+$PEL.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:55652 - "GET /api/signals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55705 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55716 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55722 - "GET /static/css/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55766 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:55766 - "GET /api/overview HTTP/1.1" 200 OK
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:55765 - "GET /api/signals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55766 - "GET /api/signals?segment=SWING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55787 - "GET /api/signals?segment=LONG-TERM HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55790 - "GET /api/overview HTTP/1.1" 200 OK
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:55821 - "GET /api/signals?segment=SWING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55829 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55832 - "GET /api/signals?segment=SWING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55837 - "GET /api/signals?segment=INTRADAY HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55847 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55855 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55855 - "GET /api/overview HTTP/1.1" 200 OK
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:55856 - "GET /api/signals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55855 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55867 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55877 - "GET /api/signals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /api/signals?segment=INTRADAY HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /api/signals?segment=SWING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /api/signals?segment=LONG-TERM HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55883 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55885 - "GET /api/chart-analysis?ticker=HAL HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55889 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55890 - "GET /api/signals HTTP/1.1" 200 OK
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:55896 - "GET /api/signals?segment=INTRADAY HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55898 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55900 - "GET /api/chart-analysis?ticker=HDFCLIFE HTTP/1.1" 200 OK
+$HDFC.NS: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+$HDFC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$HDFC.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:55905 - "GET /api/chart-analysis?ticker=HDFC HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55907 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55909 - "GET /api/signals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55911 - "GET /api/signals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55913 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55913 - "GET /api/chart-analysis?ticker=ADANIPORTS HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55915 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55920 - "GET /api/signals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55930 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55930 - "GET /api/chart-analysis?ticker=ADANIPORTS HTTP/1.1" 200 OK
+[20:50:41] Market CLOSED. Scan skipped.
+INFO:     127.0.0.1:55931 - "GET /news HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55939 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55931 - "GET /api/news?limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55962 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55964 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55966 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55969 - "GET /api/sectors HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56112 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56166 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56219 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56231 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56243 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56256 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56270 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56270 - "GET /flows HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56270 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56277 - "GET /api/flows HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56289 - "GET /flows HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56289 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56290 - "GET /api/flows HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56299 - "GET /breadth HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56299 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56301 - "GET /api/breadth HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56311 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56326 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56339 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56341 - "GET /breadth HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56341 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56339 - "GET /api/breadth HTTP/1.1" 200 OK
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:56343 - "GET /api/signals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56341 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56339 - "GET /api/signals HTTP/1.1" 200 OK
+Run time of job "Scan for trading signals every N minutes (trigger: interval[0:15:00], next run at: 2026-09-22 21:20:40 IST)" was missed by 0:00:06.477845
+INFO:     127.0.0.1:56345 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56362 - "GET /api/signals?segment=SWING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56402 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56405 - "GET /api/signals?segment=SWING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56420 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56428 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56448 - "GET /api/overview HTTP/1.1" 200 OK
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:56449 - "GET /api/signals?segment=SWING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56448 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     Started server process [5032]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[yfinance] Live data enabled — no API key needed.
+Signal scanner started. Scanning every 15 minutes during market hours.
+INFO:     127.0.0.1:56516 - "GET /api/overview HTTP/1.1" 200 OK
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TATAMOTORS.NS"}}}
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PEL.NS"}}}
+$PEL.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:56516 - "GET /api/signals?segment=SWING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56534 - "GET /api/sectors HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56572 - "GET /api/signals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56576 - "GET /api/chart-analysis?ticker=ADANIPORTS HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56579 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56592 - "GET /api/overview HTTP/1.1" 200 OK
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:56604 - "GET /api/signals?segment=SWING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56616 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     Started server process [1044]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[yfinance] Live data enabled — no API key needed.
+Signal scanner started. Scanning every 15 minutes during market hours.
+INFO:     127.0.0.1:56638 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56651 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56651 - "GET /static/js/app.js HTTP/1.1" 200 OK
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TATAMOTORS.NS"}}}
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PEL.NS"}}}
+$PEL.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:56651 - "GET /api/signals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56652 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56673 - "GET /api/signals?segment=SWING HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56680 - "GET /api/overview HTTP/1.1" 200 OK
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:56719 - "GET /api/breadth HTTP/1.1" 200 OK
+[fiidii] MoneyControl source failed: Server error '503 Service Unavailable' for url 'https://www.moneycontrol.com/menubar/json/fiidii_combined.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503
+INFO:     127.0.0.1:56722 - "GET /api/flows HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56729 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56732 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56735 - "GET /breadth HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56737 - "GET /flows HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56739 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56741 - "GET /api/sectors HTTP/1.1" 200 OK
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:56746 - "GET /api/signals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56750 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "GET /api/overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56768 - "GET /api/overview HTTP/1.1" 200 OK
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$TATAMOTORS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$PEL.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$CADILAHC.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MCDOWELL-N.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$SRTRANSFIN.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ZOMATO.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$INOXLEISUR.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MOTHERSUMI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$AMARAJABAT.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$ADANITRANS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$MINDTREE.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$LTI.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+$BAJAJHOLD.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:56769 - "GET /api/signals?segment=SWING HTTP/1.1" 200 OK
+INFO:     Shutting down
+^C
