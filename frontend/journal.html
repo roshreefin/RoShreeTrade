@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Journal — Equity Signal Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <style>
+        .journal-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem; }
+        .journal-stat { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 1rem; text-align: center; }
+        .journal-stat .num { font-size: 1.5rem; font-weight: 800; }
+        .journal-stat .lbl { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.25rem; }
+        .journal-form { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.25rem; margin-bottom: 1.5rem; }
+        .journal-form .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; margin-bottom: 0.75rem; }
+        .journal-form label { display: block; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 0.25rem; }
+        .journal-form input, .journal-form select, .journal-form textarea { width: 100%; padding: 0.5rem 0.6rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-primary); font-size: 0.85rem; outline: none; }
+        .journal-form input:focus, .journal-form select:focus, .journal-form textarea:focus { border-color: var(--accent-blue); }
+        .journal-form textarea { resize: vertical; min-height: 50px; }
+        .journal-form .form-actions { display: flex; gap: 0.75rem; justify-content: flex-end; }
+        .trade-row { display: grid; grid-template-columns: 1fr auto; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 0.5rem; align-items: center; }
+        .trade-row .info { font-size: 0.8rem; }
+        .trade-row .info strong { font-size: 0.9rem; }
+        .trade-row .info .meta { color: var(--text-muted); font-size: 0.7rem; margin-top: 0.15rem; }
+        .trade-row .pnl { font-size: 1rem; font-weight: 700; text-align: right; }
+        .pnl.positive { color: var(--accent-green); }
+        .pnl.negative { color: var(--accent-red); }
+        .empty-journal { text-align: center; padding: 3rem; color: var(--text-muted); }
+        .btn-sm { padding: 0.35rem 0.75rem; font-size: 0.75rem; }
+        .btn-danger { background: #dc2626; border-color: #dc2626; color: #fff; }
+        .btn-danger:hover { background: #b91c1c; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand"><div class="logo">&#x2B21;</div><span>Equity Signal Engine</span></a>
+        <div style="display:flex;align-items:center;gap:1.5rem;">
+            <div class="nav-links">
+                <a href="/" class="nav-link">Dashboard</a>
+                <a href="/chart" class="nav-link">Chart</a>
+                <a href="/news" class="nav-link">News</a>
+                <a href="/journal" class="nav-link active">Journal</a>
+                <a href="/stocks" class="nav-link">Stocks</a>
+                <a href="/portfolio" class="nav-link">Portfolio</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Tools &#x25BE;</a>
+                    <div class="dropdown-menu">
+                        <a href="/sectors" class="dropdown-item">Sector Rotation</a>
+                        <a href="/flows" class="dropdown-item">FII/DII Flows</a>
+                        <a href="/breadth" class="dropdown-item">Market Breadth</a>
+                        <a href="/seasonal" class="dropdown-item">Seasonal Calendar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="market-status"><span class="status-dot closed"></span><span>Market Closed</span></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header"><h1>Trade Journal</h1><p>Log your trades, track P&L, win rate & performance over time. Data is stored locally in your browser.</p></div>
+
+        <div class="journal-summary" id="journal-summary">
+            <div class="journal-stat"><div class="num" id="j-total">0</div><div class="lbl">Total Trades</div></div>
+            <div class="journal-stat"><div class="num" id="j-wins">0</div><div class="lbl">Wins</div></div>
+            <div class="journal-stat"><div class="num" id="j-losses">0</div><div class="lbl">Losses</div></div>
+            <div class="journal-stat"><div class="num" id="j-winrate" style="color:var(--accent-green);">0%</div><div class="lbl">Win Rate</div></div>
+            <div class="journal-stat"><div class="num" id="j-pnl">&#x20B9;0</div><div class="lbl">Net P&amp;L</div></div>
+            <div class="journal-stat"><div class="num" id="j-avgrr">0</div><div class="lbl">Avg R:R</div></div>
+        </div>
+
+        <div class="journal-form" id="journal-form">
+            <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.75rem;">&#x2795; Add New Trade</h3>
+            <div class="row">
+                <div><label>Date</label><input type="date" id="trade-date"></div>
+                <div><label>Ticker</label><input type="text" id="trade-ticker" placeholder="e.g. RELIANCE" maxlength="15" style="text-transform:uppercase;"></div>
+                <div><label>Direction</label><select id="trade-direction"><option value="BUY">BUY (Long)</option><option value="SHORT">SHORT (Sell)</option></select></div>
+                <div><label>Quantity</label><input type="number" id="trade-qty" min="1" value="1"></div>
+            </div>
+            <div class="row">
+                <div><label>Entry Price (&#x20B9;)</label><input type="number" id="trade-entry" step="0.05" min="0.01"></div>
+                <div><label>Exit Price (&#x20B9;)</label><input type="number" id="trade-exit" step="0.05" min="0.01"></div>
+                <div><label>Result</label><select id="trade-result"><option value="WIN">WIN</option><option value="LOSS">LOSS</option></select></div>
+                <div><label>R Multiple</label><input type="number" id="trade-rr" step="0.1" min="0" placeholder="e.g. 2.5"></div>
+            </div>
+            <div class="row">
+                <div style="grid-column:1/-1;"><label>Notes / Strategy Used</label><textarea id="trade-notes" placeholder="e.g. VCP breakout, RVOL above avg, sector in uptrend..."></textarea></div>
+            </div>
+            <div class="form-actions">
+                <button class="btn" onclick="clearJournal()">&#x1F5D1; Clear All</button>
+                <button class="btn btn-primary" onclick="addTrade()">&#x2795; Add Trade</button>
+            </div>
+        </div>
+
+        <div id="journal-trades"></div>
+    </div>
+
+    <script src="static/js/app.js"></script>
+</body>
+</html>

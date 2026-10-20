@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Breadth — Equity Signal Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <style>
+        .breadth-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+        .breadth-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.25rem; text-align: center; }
+        .breadth-card .num { font-size: 2rem; font-weight: 800; }
+        .breadth-card .lbl { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.25rem; }
+        .breadth-bar { display: flex; height: 32px; border-radius: 8px; overflow: hidden; margin: 1rem 0; }
+        .breadth-bar .segment { display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: #fff; transition: width 0.5s; }
+        .breadth-bar .adv { background: #22c55e; }
+        .breadth-bar .dec { background: #ef4444; }
+        .breadth-bar .unc { background: #64748b; }
+        .breadth-status { text-align: center; font-size: 1rem; font-weight: 700; padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem; }
+        .status-strong { background: rgba(34,197,94,0.12); color: #22c55e; border: 1px solid rgba(34,197,94,0.2); }
+        .status-weak { background: rgba(239,68,68,0.12); color: #ef4444; border: 1px solid rgba(239,68,68,0.2); }
+        .status-mixed { background: rgba(148,163,184,0.12); color: #94a3b8; border: 1px solid rgba(148,163,184,0.2); }
+        .breadth-insight { font-size: 0.85rem; color: var(--text-secondary); padding: 1rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; margin-top: 1rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand"><div class="logo">&#x2B21;</div><span>Equity Signal Engine</span></a>
+        <div style="display:flex;align-items:center;gap:1.5rem;">
+            <div class="nav-links">
+                <a href="/" class="nav-link">Dashboard</a>
+                <a href="/chart" class="nav-link">Chart</a>
+                <a href="/news" class="nav-link">News</a>
+                <a href="/journal" class="nav-link">Journal</a>
+                <a href="/stocks" class="nav-link">Stocks</a>
+                <a href="/portfolio" class="nav-link">Portfolio</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active">Tools &#x25BE;</a>
+                    <div class="dropdown-menu">
+                        <a href="/sectors" class="dropdown-item">Sector Rotation</a>
+                        <a href="/flows" class="dropdown-item">FII/DII Flows</a>
+                        <a href="/breadth" class="dropdown-item">Market Breadth</a>
+                    </div>
+                </div>
+            </div>
+            <div class="market-status"><span class="status-dot closed"></span><span>Market Closed</span></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header"><h1>Market Breadth</h1><p>Measures how many stocks are participating in the move. Strong breadth = healthy trend. Weak breadth = caution.</p></div>
+
+        <div class="breadth-grid" id="breadth-grid"><div class="loading"><div class="spinner"></div><p>Loading breadth data...</p></div></div>
+        <div id="breadth-status"></div>
+        <div class="breadth-bar" id="breadth-bar"></div>
+        <div id="breadth-insight"></div>
+        <div style="font-size:0.75rem;color:var(--text-muted);margin-top:1rem;" id="breadth-timestamp"></div>
+    </div>
+
+    <script src="static/js/app.js"></script>
+</body>
+</html>

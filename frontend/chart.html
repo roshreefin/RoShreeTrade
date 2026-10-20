@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart Analysis — Equity Signal Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">
+            <div class="logo">⬡</div>
+            <span>Equity Signal Engine</span>
+        </a>
+        <div style="display:flex;align-items:center;gap:1.5rem;">
+            <div class="nav-links">
+                <a href="/" class="nav-link">Dashboard</a>
+                <a href="/chart" class="nav-link active">Chart</a>
+                <a href="/news" class="nav-link">News</a>
+                <a href="/journal" class="nav-link">Journal</a>
+                <a href="/stocks" class="nav-link">Stocks</a>
+                <a href="/portfolio" class="nav-link">Portfolio</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Tools &#x25BE;</a>
+                    <div class="dropdown-menu">
+                        <a href="/sectors" class="dropdown-item">Sector Rotation</a>
+                        <a href="/flows" class="dropdown-item">FII/DII Flows</a>
+                        <a href="/breadth" class="dropdown-item">Market Breadth</a>
+                        <a href="/seasonal" class="dropdown-item">Seasonal Calendar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="market-status">
+                <span class="status-dot closed"></span>
+                <span>Market Closed</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Chart Technical Analysis</h1>
+            <p>Support/resistance, RSI, MACD, volume analysis & pattern detection for any NSE stock.</p>
+        </div>
+
+        <div class="live-signals-row" style="margin-bottom:1rem;background:var(--bg-card);border:1px solid var(--border-color);border-radius:10px;padding:0.75rem 1rem;display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+            <span style="font-size:0.75rem;font-weight:700;color:#fbbf24;letter-spacing:0.03em;text-transform:uppercase;">&#9889; Live Signals</span>
+            <select id="chart-signal-sel" style="flex:1;min-width:220px;padding:0.5rem 0.75rem;background:var(--bg-primary);border:1px solid var(--border-color);border-radius:8px;color:var(--text-primary);font-size:0.85rem;outline:none;">
+                <option value="">\u2014 Select a live signal \u2014</option>
+            </select>
+        </div>
+
+        <div class="scanner-section" style="margin-top:0;">
+            <div class="scanner-input-group">
+                <input type="text" id="chart-ticker" placeholder="Enter NSE Ticker (e.g. RELIANCE, TCS, HAL, INFY)" maxlength="20" style="flex:1;padding:0.75rem 1rem;background:var(--bg-primary);border:1px solid var(--border-color);border-radius:8px;color:var(--text-primary);font-size:0.9rem;outline:none;">
+                <button id="chart-go" class="btn btn-primary" style="white-space:nowrap;">Analyze</button>
+            </div>
+            <div id="chart-result">
+                <div style="text-align:center;padding:3rem;color:var(--text-muted);font-size:0.9rem;">Enter a ticker symbol above and click <strong>Analyze</strong></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/app.js"></script>
+</body>
+</html>

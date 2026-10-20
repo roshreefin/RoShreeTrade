@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seasonal Calendar — Equity Signal Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <style>
+        .season-timeline { display: flex; gap: 0; margin-bottom: 2rem; overflow-x: auto; padding-bottom: 0.5rem; }
+        .season-month { flex: 1; min-width: 80px; padding: 0.75rem 0.5rem; text-align: center; border-radius: 8px; cursor: pointer; font-size: 0.75rem; font-weight: 600; transition: all 0.2s; border: 1px solid transparent; }
+        .season-month:hover { background: var(--bg-hover); }
+        .season-month.active { background: rgba(59,130,246,0.15); color: #3b82f6; border-color: rgba(59,130,246,0.3); }
+        .season-month.current { background: rgba(34,197,94,0.12); color: #22c55e; border-color: rgba(34,197,94,0.3); font-weight: 800; }
+        .season-month .month-name { display: block; font-weight: 700; }
+        .season-month .month-label { font-size: 0.6rem; color: var(--text-muted); display: block; margin-top: 2px; }
+        .season-section { margin-bottom: 2rem; }
+        .season-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+        .event-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+        .event-tag { padding: 0.3rem 0.75rem; background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2); border-radius: 20px; font-size: 0.75rem; font-weight: 500; color: #3b82f6; }
+        .theme-list { margin-bottom: 1rem; }
+        .theme-item { padding: 0.5rem 0.75rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 0.5rem; font-size: 0.8rem; color: var(--text-secondary); border-left: 3px solid #3b82f6; }
+        .sector-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+        .sector-col { padding: 1rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; }
+        .sector-col h3 { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem; }
+        .sector-col.bullish h3 { color: #22c55e; }
+        .sector-col.bearish h3 { color: #ef4444; }
+        .sector-entry { padding: 0.6rem 0; border-bottom: 1px solid var(--border-color); }
+        .sector-entry:last-child { border-bottom: none; }
+        .sector-entry .sector-name { font-size: 0.8rem; font-weight: 700; color: var(--text-primary); }
+        .sector-entry .sector-stocks { font-size: 0.7rem; color: #3b82f6; margin: 0.2rem 0; }
+        .sector-entry .sector-reason { font-size: 0.72rem; color: var(--text-muted); line-height: 1.4; }
+        .strategy-box { padding: 1rem 1.25rem; background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(139,92,246,0.08)); border: 1px solid rgba(59,130,246,0.2); border-radius: 10px; margin-top: 1rem; }
+        .strategy-box h3 { font-size: 0.85rem; font-weight: 700; color: #3b82f6; margin-bottom: 0.5rem; }
+        .strategy-box p { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6; }
+        .upcoming-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+        .upcoming-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 1rem; }
+        .upcoming-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+        .upcoming-card .chip { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 12px; font-size: 0.65rem; font-weight: 600; }
+        .chip-bull { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .chip-event { background: rgba(59,130,246,0.15); color: #3b82f6; }
+        .upcoming-card ul { list-style: none; padding: 0; margin: 0.5rem 0; }
+        .upcoming-card li { font-size: 0.75rem; color: var(--text-secondary); padding: 0.2rem 0; }
+        .upcoming-card li::before { content: "▸ "; color: #3b82f6; }
+        .all-months-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-top: 1.5rem; }
+        .all-month-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem; cursor: pointer; transition: all 0.2s; }
+        .all-month-card:hover { border-color: #3b82f6; transform: translateY(-2px); }
+        .all-month-card.current-month { border-color: #22c55e; background: rgba(34,197,94,0.05); }
+        .all-month-card .am-name { font-size: 0.8rem; font-weight: 700; }
+        .all-month-card .am-season { font-size: 0.65rem; color: var(--text-muted); }
+        .all-month-card .am-themes { font-size: 0.65rem; color: var(--text-secondary); margin-top: 0.3rem; line-height: 1.3; }
+        @media (max-width: 768px) {
+            .sector-grid { grid-template-columns: 1fr; }
+            .all-months-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand"><div class="logo">&#x2B21;</div><span>Equity Signal Engine</span></a>
+        <div style="display:flex;align-items:center;gap:1.5rem;">
+            <div class="nav-links">
+                <a href="/" class="nav-link">Dashboard</a>
+                <a href="/chart" class="nav-link">Chart</a>
+                <a href="/news" class="nav-link">News</a>
+                <a href="/journal" class="nav-link">Journal</a>
+                <a href="/stocks" class="nav-link">Stocks</a>
+                <a href="/portfolio" class="nav-link">Portfolio</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active">Tools &#x25BE;</a>
+                    <div class="dropdown-menu">
+                        <a href="/sectors" class="dropdown-item">Sector Rotation</a>
+                        <a href="/flows" class="dropdown-item">FII/DII Flows</a>
+                        <a href="/breadth" class="dropdown-item">Market Breadth</a>
+                        <a href="/seasonal" class="dropdown-item">Seasonal Calendar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="market-status"><span class="status-dot closed"></span><span>Market Closed</span></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header"><h1>Seasonal Calendar</h1><p>Weather, events, and cycles that move Indian stocks. Position ahead of seasonal patterns for an edge.</p></div>
+
+        <div class="season-timeline" id="season-timeline"></div>
+
+        <div id="season-current">
+            <div class="loading"><div class="spinner"></div><p>Loading seasonal data...</p></div>
+        </div>
+
+        <div class="season-section" id="season-upcoming-section" style="display:none;">
+            <h2>&#x23F3; Coming Up</h2>
+            <div class="upcoming-grid" id="season-upcoming"></div>
+        </div>
+
+        <div class="season-section">
+            <h2>&#x1F4C5; Full Year Calendar</h2>
+            <div class="all-months-grid" id="all-months-grid"></div>
+        </div>
+    </div>
+
+    <script src="static/js/app.js"></script>
+    <script>
+    var _seasonalData = null;
+    var _selectedMonth = null;
+
+    function renderTimeline(months, currentMonth) {
+        var el = document.getElementById("season-timeline");
+        var monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+        var html = "";
+        for (var i = 0; i < 12; i++) {
+            var m = months.find(function(x){ return x.month_num === i+1; });
+            var cls = "season-month";
+            if (i+1 === currentMonth) cls += " current";
+            if (_selectedMonth === i+1) cls += " active";
+            html += '<div class="' + cls + '" data-month="' + (i+1) + '">'
+                + '<span class="month-name">' + monthNames[i] + '</span>'
+                + (m ? '<span class="month-label">' + m.season + '</span>' : '<span class="month-label">&nbsp;</span>')
+                + '</div>';
+        }
+        el.innerHTML = html;
+        el.querySelectorAll(".season-month").forEach(function(dm){
+            dm.onclick = function(){ _selectedMonth = parseInt(this.getAttribute("data-month")); renderMonthDetail(); renderTimeline(months, currentMonth); };
+        });
+    }
+
+    function renderSectorList(sectors, type) {
+        if (!sectors || !sectors.length) return '<div style="font-size:0.8rem;color:var(--text-muted);padding:0.5rem;">No notable ' + type + ' sectors this month.</div>';
+        var html = "";
+        for (var i = 0; i < sectors.length; i++) {
+            var s = sectors[i];
+            html += '<div class="sector-entry">'
+                + '<div class="sector-name">' + s.name + '</div>'
+                + '<div class="sector-stocks">' + (s.stocks || []).join(", ") + '</div>'
+                + '<div class="sector-reason">' + (s.reason || "") + '</div>'
+                + '</div>';
+        }
+        return html;
+    }
+
+    function renderMonthDetail() {
+        if (!_seasonalData) return;
+        var month = _seasonalData.all_months.find(function(m){ return m.month_num === _selectedMonth; });
+        if (!month) return;
+        var el = document.getElementById("season-current");
+        var eventsHtml = "";
+        if (month.events) {
+            eventsHtml = '<div class="event-tags">';
+            for (var i = 0; i < month.events.length; i++) {
+                eventsHtml += '<span class="event-tag">' + month.events[i] + '</span>';
+            }
+            eventsHtml += '</div>';
+        }
+        var themesHtml = "";
+        if (month.themes) {
+            themesHtml = '<div class="theme-list">';
+            for (var i = 0; i < month.themes.length; i++) {
+                themesHtml += '<div class="theme-item">' + month.themes[i] + '</div>';
+            }
+            themesHtml += '</div>';
+        }
+        el.innerHTML = '<div class="season-section">'
+            + '<h2>&#x1F4C6; ' + month.month + ' <span style="font-size:0.75rem;font-weight:400;color:var(--text-muted);">' + month.season + '</span></h2>'
+            + eventsHtml
+            + themesHtml
+            + '<div class="sector-grid">'
+            + '<div class="sector-col bullish"><h3>&#x1F7E2; Sectors to Buy</h3>' + renderSectorList(month.sectors_bullish, "bullish") + '</div>'
+            + '<div class="sector-col bearish"><h3>&#x1F534; Sectors to Avoid</h3>' + renderSectorList(month.sectors_bearish, "bearish") + '</div>'
+            + '</div>'
+            + '<div class="strategy-box"><h3>&#x1F4A1; Strategy</h3><p>' + (month.strategy || "") + '</p></div>'
+            + '</div>';
+    }
+
+    function renderUpcoming() {
+        if (!_seasonalData || !_seasonalData.upcoming.length) return;
+        var el = document.getElementById("season-upcoming");
+        var sec = document.getElementById("season-upcoming-section");
+        sec.style.display = "block";
+        var html = "";
+        for (var u = 0; u < _seasonalData.upcoming.length; u++) {
+            var m = _seasonalData.upcoming[u];
+            html += '<div class="upcoming-card">'
+                + '<h3>' + m.month + ' <span class="chip chip-event">' + m.season + '</span></h3>'
+                + '<ul>';
+            if (m.themes) {
+                for (var t = 0; t < Math.min(m.themes.length, 3); t++) {
+                    html += '<li>' + m.themes[t] + '</li>';
+                }
+            }
+            if (m.sectors_bullish) {
+                for (var s = 0; s < Math.min(m.sectors_bullish.length, 2); s++) {
+                    html += '<li><span class="chip chip-bull">' + m.sectors_bullish[s].name + '</span> ' + (m.sectors_bullish[s].stocks || []).join(", ") + '</li>';
+                }
+            }
+            html += '</ul></div>';
+        }
+        el.innerHTML = html;
+    }
+
+    function renderAllMonths() {
+        if (!_seasonalData) return;
+        var el = document.getElementById("all-months-grid");
+        var now = new Date();
+        var currentMonthNum = now.getMonth() + 1;
+        var html = "";
+        for (var i = 0; i < _seasonalData.all_months.length; i++) {
+            var m = _seasonalData.all_months[i];
+            var cls = "all-month-card";
+            if (m.month_num === currentMonthNum) cls += " current-month";
+            html += '<div class="' + cls + '" data-month="' + m.month_num + '">'
+                + '<div class="am-name">' + m.month + '</div>'
+                + '<div class="am-season">' + m.season + '</div>'
+                + '<div class="am-themes">' + (m.themes ? m.themes[0] : "") + '</div>'
+                + '</div>';
+        }
+        el.innerHTML = html;
+        el.querySelectorAll(".all-month-card").forEach(function(c){
+            c.onclick = function(){ _selectedMonth = parseInt(this.getAttribute("data-month")); renderMonthDetail(); };
+        });
+    }
+
+    async function loadSeasonal() {
+        try {
+            var data = await fetchAPI("/api/seasonal");
+            _seasonalData = data;
+            _selectedMonth = data.current ? data.current.month_num : (new Date().getMonth() + 1);
+            var months = data.all_months || [];
+            var currentMonth = new Date().getMonth() + 1;
+            renderTimeline(months, currentMonth);
+            renderMonthDetail();
+            renderUpcoming();
+            renderAllMonths();
+        } catch(err) {
+            document.getElementById("season-current").innerHTML = '<div class="empty-state"><h3>Error</h3><p>' + err.message + '</p></div>';
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function(){ loadSeasonal(); });
+    </script>
+</body>
+</html>
